@@ -793,3 +793,10 @@
 .article li{position:relative;padding-left:26px;margin-bottom:12px;font-size:16.5px;line-height:1.7}
 .article li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--gold-2)}
 .article strong{color:var(--text)}
+
+
+/* ===== Careers stat pills ===== */
+.career-stats{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.career-stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-align:center;min-width:150px}
+.career-stat b{display:block;color:var(--gold-2);font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:.5px}
+.career-stat span{color:var(--muted);font-size:12.5px}
