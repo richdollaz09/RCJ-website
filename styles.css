@@ -61,10 +61,10 @@
   .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:40px;flex-wrap:wrap;gap:6px}
   .topbar strong{color:var(--gold-2);font-weight:600}
   .topbar a:hover{color:#fff}
-  .motto-bar{background:#0b0e13;border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;position:relative;overflow:hidden}
+  .motto-bar{background:#0b0e13;border-bottom:1px solid var(--line);text-align:center;padding:12px 16px;position:relative;overflow:hidden}
   .motto-bar::before{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(100deg,transparent 18%,rgba(255,255,255,.13) 46%,rgba(230,201,118,.22) 54%,transparent 82%);transform:translateX(-120%);animation:mottoRay 5.5s ease-in-out infinite;pointer-events:none;z-index:0}
   @keyframes mottoRay{0%{transform:translateX(-120%)}50%,100%{transform:translateX(340%)}}
-  .motto-bar .wrap{position:relative;z-index:1;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2.5px;font-size:clamp(10px,1.35vw,12px);color:#cfd6e2;font-weight:500;line-height:1.5}
+  .motto-bar .wrap{position:relative;z-index:1;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:clamp(11px,1.7vw,15px);color:#cfd6e2;font-weight:500;line-height:1.5}
   .motto-bar .dot{color:var(--gold-2);margin:0 11px}
   .motto-bar .hl{color:var(--gold-2)}
 
@@ -800,3 +800,23 @@
 .career-stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 20px;text-align:center;min-width:150px}
 .career-stat b{display:block;color:var(--gold-2);font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:.5px}
 .career-stat span{color:var(--muted);font-size:12.5px}
+
+
+/* ===== Mobile nav menu + motto ===== */
+@media(max-width:900px){
+  .menu-btn{display:block}
+  nav.links{display:none}
+  nav.links.open{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 20px 14px;gap:0;box-shadow:0 24px 40px rgba(0,0,0,.5);z-index:200;max-height:82vh;overflow-y:auto}
+  nav.links.open a{border:0!important;background:none!important;border-radius:0;padding:12px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)!important;white-space:normal;font-size:15px}
+  nav.links.open .nav-dd{position:static;width:100%}
+  nav.links.open .nav-dd::after{display:none}
+  nav.links.open .nav-dd-trigger{justify-content:flex-start;font-weight:600}
+  nav.links.open .dd-caret{display:none}
+  nav.links.open .nav-dd-menu{position:static;opacity:1!important;visibility:visible!important;transform:none!important;display:block;box-shadow:none;background:transparent;border:0;padding:2px 0 8px 16px;min-width:0}
+  nav.links.open .nav-dd-menu a{border-bottom:0!important;padding:9px 8px;color:var(--muted);font-size:14px}
+  [data-theme="light"] nav.links.open{background:#ffffff}
+}
+@media(max-width:600px){
+  .motto-bar .m-dot{display:none}
+  .motto-bar .hl{display:block;margin-top:2px}
+}
