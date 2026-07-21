@@ -118,7 +118,7 @@
   .theme-toggle svg{width:16px;height:16px}
   .theme-toggle .ico-moon{display:none}
   @media(max-width:1120px){.nav-phone,.nav-div,.nav-socials{display:none}}
-  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:8px 10px;color:#fff;cursor:pointer}
+  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 13px;color:#fff;cursor:pointer;font-size:28px;line-height:1}
 
   /* Quick links (circles) */
   .quicklinks{background:var(--bg-2);border-bottom:1px solid var(--line);padding:26px 0}
