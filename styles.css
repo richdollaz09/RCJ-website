@@ -740,3 +740,56 @@
 .gal-lb.on{display:flex}
 .gal-lb img{max-width:92vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 70px rgba(0,0,0,.7)}
 .gal-lb-close{position:absolute;top:18px;right:26px;color:#fff;font-size:38px;line-height:1;cursor:pointer;font-family:sans-serif}
+
+
+/* ===== Connect / FAQ / Blog pages ===== */
+.info-hero{background:var(--bg-2);text-align:center}
+.info-hero h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(34px,5.5vw,56px);margin:8px 0 0;letter-spacing:.5px}
+.info-hero h1 span{color:var(--gold-2)}
+.info-hero .lead{margin:14px auto 0}
+/* FAQ accordion */
+.faq-cat{margin-top:40px}
+.faq-cat>h2{font-family:'Oswald',sans-serif;font-size:clamp(22px,3vw,30px);color:#fff;margin-bottom:16px;letter-spacing:.4px}
+.faq-item{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;overflow:hidden;transition:.2s}
+.faq-item.open{border-color:rgba(201,162,75,.4)}
+.faq-q{width:100%;text-align:left;background:none;border:0;color:var(--text);font-family:inherit;font-size:16px;font-weight:600;padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4}
+.faq-q .fq-ico{color:var(--gold-2);flex:0 0 auto;font-size:26px;line-height:1;transition:transform .25s}
+.faq-item.open .fq-ico{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-item.open .faq-a{max-height:340px}
+.faq-a div{padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.7}
+/* Blog */
+.blog-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.blog-chip{font-size:13px;padding:8px 16px;border-radius:22px;border:1px solid var(--line);color:var(--muted);background:rgba(255,255,255,.02)}
+.blog-chip.active{background:rgba(201,162,75,.14);border-color:rgba(201,162,75,.45);color:var(--gold-2);font-weight:600}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blog-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+.blog-card:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.4);box-shadow:var(--shadow)}
+.blog-img{aspect-ratio:16/10;overflow:hidden}
+.blog-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.blog-card:hover .blog-img img{transform:scale(1.05)}
+.blog-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.blog-meta{font-family:'Oswald',sans-serif;font-size:11.5px;color:var(--gold-2);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.blog-meta span{color:var(--muted);letter-spacing:0;font-family:'Inter',sans-serif;text-transform:none}
+.blog-card h3{font-size:18px;color:#fff;margin-bottom:10px;line-height:1.28}
+.blog-excerpt{color:var(--muted);font-size:14px;line-height:1.55;flex:1;margin-bottom:14px}
+.blog-more{color:var(--gold-2);font-weight:600;font-size:14px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}}
+
+
+/* ===== Blog article pages ===== */
+.art-hero{background:var(--bg-2)}
+.art-back{color:var(--gold-2);font-weight:600;font-size:14px}
+.art-hero .eyebrow{color:var(--gold-2)}
+.art-hero h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,48px);line-height:1.14;margin:10px 0 14px;max-width:22ch}
+.art-meta{color:var(--muted);font-size:14px}
+.art-img{max-width:900px;margin:0 auto 42px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+.art-img img{width:100%;display:block}
+.article{max-width:760px;margin:0 auto}
+.article p{color:var(--muted);font-size:17px;line-height:1.8;margin:0 0 20px}
+.article h2{font-family:'Oswald',sans-serif;font-weight:600;font-size:25px;color:#fff;margin:36px 0 12px;letter-spacing:.3px}
+.article ul{margin:0 0 20px;padding-left:4px;list-style:none;color:var(--muted)}
+.article li{position:relative;padding-left:26px;margin-bottom:12px;font-size:16.5px;line-height:1.7}
+.article li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--gold-2)}
+.article strong{color:var(--text)}
