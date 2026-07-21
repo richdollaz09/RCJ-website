@@ -118,7 +118,7 @@
   .theme-toggle svg{width:16px;height:16px}
   .theme-toggle .ico-moon{display:none}
   @media(max-width:1120px){.nav-phone,.nav-div,.nav-socials{display:none}}
-  .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:4px 13px;color:#fff;cursor:pointer;font-size:28px;line-height:1}
+  .menu-btn{display:none;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:50%;width:42px;height:42px;color:#fff;cursor:pointer;font-size:24px;line-height:1;padding:0}
 
   /* Quick links (circles) */
   .quicklinks{background:var(--bg-2);border-bottom:1px solid var(--line);padding:26px 0}
@@ -804,7 +804,9 @@
 
 /* ===== Mobile nav menu + motto ===== */
 @media(max-width:900px){
-  .menu-btn{display:block}
+  .menu-btn{display:flex}
+  .theme-toggle{width:42px;height:42px;border-radius:11px}
+  .theme-toggle svg{width:22px;height:22px}
   nav.links{display:none}
   nav.links.open{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:100%;left:0;right:0;background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 20px 14px;gap:0;box-shadow:0 24px 40px rgba(0,0,0,.5);z-index:200;max-height:82vh;overflow-y:auto}
   nav.links.open a{border:0!important;background:none!important;border-radius:0;padding:12px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)!important;white-space:normal;font-size:15px}
