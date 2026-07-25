@@ -83,7 +83,7 @@
 </div></section>
 
 <section class="section quote-form-sec"><div class="wrap">
-  <form id="quoteForm" class="quote-form">
+  <form id="quoteForm" class="quote-form"><input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <div class="quote-progress">
       <div class="qp-top"><span id="qpStep">Step 1 of 5: Property type</span><span id="qpPct">20% complete</span></div>
       <div class="qp-track"><div class="qp-fill" id="qpFill"></div></div>
@@ -184,7 +184,7 @@
         <a href="about.html">Company</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#areas">Service Areas</a>
-        <a href="index.html#contact">Contact / Free Quote</a>
+        <a href="quote.html">Contact / Free Quote</a>
         <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
@@ -321,12 +321,11 @@ if(dns)dns.addEventListener('click',function(e){e.preventDefault();try{localStor
       'Role: '+(d.get('role')||''),
       'Preferred contact: '+(d.get('prefer')||'')];
     var subj='Website Quote Request'+(d.get('pname')?(' - '+d.get('pname')):'');
-    window.location.href='mailto:info@rcjprotectionagency.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(L.join('\n'));
-    if(!document.getElementById('qSent')){
-      var n=document.createElement('div');n.id='qSent';n.className='qsent';
-      n.textContent='\u2713 Opening your email app with the request ready to send. If nothing opens, call (818) 835-4077 or email info@rcjprotectionagency.com.';
-      document.getElementById('qReview').parentNode.insertBefore(n,document.querySelector('.quote-nav'));
-    }
+    if(d.get('_honey')){return;}
+    d.append('_subject',subj);d.append('_template','table');d.append('_captcha','false');d.append('message',L.join('\n'));
+    function qShowSent(msg){submit.style.display='none';back.style.display='none';if(!document.getElementById('qSent')){var n=document.createElement('div');n.id='qSent';n.className='qsent';n.innerHTML=msg;document.getElementById('qReview').parentNode.insertBefore(n,document.querySelector('.quote-nav'));}}
+    submit.disabled=true;submit.textContent='Sending...';
+    fetch('https://formsubmit.co/ajax/info@rcjprotectionagency.com',{method:'POST',headers:{'Accept':'application/json'},body:d}).then(function(r){return r.json();}).then(function(){qShowSent('\u2713 <b>Thank you!</b> Your request has been sent to RCJ Protection Agency. We&rsquo;ll be in touch within one business day. Prefer to talk now? Call <a href="tel:8188354077">(818) 835-4077</a>.');}).catch(function(){window.location.href='mailto:info@rcjprotectionagency.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(L.join('\n'));qShowSent('\u2713 Sending by email instead &mdash; your email app should open with the request ready. If nothing opens, call (818) 835-4077.');});
   });
   render();
 })();
